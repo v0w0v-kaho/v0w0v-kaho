@@ -1,0 +1,19 @@
+name: Generate 3D Profile
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate 3D profile
+        uses: Robbevanherpe1/github-profile-3d-contrib@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
